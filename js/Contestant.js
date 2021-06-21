@@ -4,7 +4,7 @@ class Contestant {
     this.answer = 0;
     this.name = null;
   }
-//this will use when we have to chage gamestate
+
   getCount(){
     var contestantCountRef = database.ref('contestantCount');
     contestantCountRef.on("value",(data)=>{
@@ -14,7 +14,7 @@ class Contestant {
 
   updateCount(count){
     database.ref('/').update({
-      contestantCount:count
+      contestantCount: count
     });
   }
 
@@ -32,5 +32,4 @@ class Contestant {
       allContestants = data.val();
     })
   }
-  
 }

@@ -30,15 +30,33 @@ class Quiz {
 
   play(){
     //write code here to hide question elements
+    question.hide();
 
     //write code to change the background color here
-
+background("yellow")
     //write code to show a heading for showing the result of Quiz
-
+    textSize(20)
+text("WINNER IS ", 396,25)
     //call getContestantInfo( ) here
-
+Contestant.getPlayerInfo();
 
     //write condition to check if contestantInfor is not undefined
+if(allContestants!==undefined){
+  var displayPos=200
+  text("winner will be declared in green",96,307)
+for(var i in allContestants){
+  displayPos+=70
+  if(allContestants[i].answer==='2'){
+    fill("green")
+  }
+  else{
+
+    fill("black")
+  }
+  text(allContestants[i].name+": "+allContestants[i].answer,200,displayPos)
+
+}
+}
 
     //write code to add a note here
 
